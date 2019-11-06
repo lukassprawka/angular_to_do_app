@@ -1,0 +1,8 @@
+<div class="container">
+  Zadania wykonane: {{ doneTasksList.length }}
+  <ul>
+    <li appChecked *ngFor="let task of doneTasksList">
+      {{ task.name | transformTask: ' - super!' }}
+    </li>
+  </ul>
+</div>

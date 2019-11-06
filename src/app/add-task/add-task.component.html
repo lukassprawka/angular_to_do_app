@@ -1,0 +1,10 @@
+<form [formGroup]="newTasksForm" (submit)="onAddNewTasksClick()">
+  Miejsce na dodawanie tasków:
+  <div formArrayName="newTasks">
+    <div *ngFor="let task of newTasksForm.get('newTasks')['controls']; let i = index">
+      {{ i + 1 }}<input type="text" style="margin: 5px" [formControlName]="i" />
+      <button type="button" (click)="addAnotherTaskField()">Następne zadanie</button>
+    </div>
+    <button type="submit" [disabled]="newTasksForm.invalid">Dodaj do listy zadań</button>
+  </div>
+</form>

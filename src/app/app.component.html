@@ -1,0 +1,15 @@
+<ul class="nav nav-pills justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/todoTasks" routerLinkActive="active">Zadania</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/doneTasks" routerLinkActive="active">Wykonane</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" *ngIf="!authService.user" routerLink="/login" routerLinkActive="active">Zaloguj</a>
+  </li>
+  <li class="nav-item">
+    <button class="nav-link" *ngIf="authService.user" (click)="logout()">Wyloguj</button>
+  </li>
+</ul>
+<router-outlet></router-outlet>
